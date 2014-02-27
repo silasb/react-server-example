@@ -1,0 +1,12 @@
+doctype html
+html
+	body
+		h1 hello
+
+		#content!= myAppHtml.test
+
+		script(src='//fb.me/react-0.9.0.min.js')
+		script(src='/bundle.js')
+		script(type='text/javascript').
+			var MyApp = require("./myApp.js"), container = document.getElementById("content");
+			React.renderComponent(MyApp(!{myAppHtml.props}), container)
